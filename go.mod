@@ -1,3 +1,3 @@
-module machine-learning-algorithms
+module github.com/thisdoraemon/goml
 
-go 1.21.1
+go 1.21.3
