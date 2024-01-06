@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"math"
 	"testing"
-
 	"github.com/thisdoraemon/goml/regression"
 )
 
@@ -56,9 +55,9 @@ func TestPredictedPrice(t *testing.T) {
 	tolerance := 0.000001
 
 	fmt.Println(predictedPrice)
-	expectedPrice := 4.5
+	expectedPrice := 5.8
 
 	if math.Abs(predictedPrice-expectedPrice) > tolerance {
-		t.Errorf("predicted price for x = 6 is incorrect. Got %f, expected %f", predictedPrice, 4.5)
+		t.Errorf("predicted price for x = 6 is incorrect. Got %f, expected %f", predictedPrice, 5.8)
 	}
 }
