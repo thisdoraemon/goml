@@ -1,6 +1,7 @@
 package test
 
 import (
+	"fmt"
 	"math"
 	"testing"
 
@@ -48,9 +49,16 @@ func TestPredictedPrice(t *testing.T) {
 
 	slope := regression.CalculateSlope(x, meanX, y, meanY)
 
-	predictedPrice := slope*(6-meanX) + meanY
+	fmt.Println(meanX)
+	fmt.Println(meanY)
 
-	if predictedPrice != 4.5 {
+	predictedPrice := slope*(6-meanX) + meanY
+	tolerance := 0.000001
+
+	fmt.Println(predictedPrice)
+	expectedPrice := 4.5
+
+	if math.Abs(predictedPrice-expectedPrice) > tolerance {
 		t.Errorf("predicted price for x = 6 is incorrect. Got %f, expected %f", predictedPrice, 4.5)
 	}
 }
